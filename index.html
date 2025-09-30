@@ -1,313 +1,276 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contriby Academy — Elite Entrepreneurial Training</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --primary-gold:#FFB800;       /* Bright, optimistic gold */
-      --deep-burgundy:#2F80ED;      /* Vibrant blue for trust and energy */
-      --cream:#FFFFFF;               /* Clean background */
-      --dark-charcoal:#1F1F1F;      /* Text dark for readability */
-      --accent-coral:#FF6F61;       /* CTA highlight / urgency */
-      --muted:#7D7D7D;              /* Soft muted text */
-      --card:#FDF6EC;               /* Warm, soft card background */
-      --max-width:1100px;
-    }
-
-    *{box-sizing:border-box;}
-    body{
-      margin:0;
-      background:linear-gradient(180deg,#FFFFFF 0%, #FDF6EC 80%);
-      color:var(--dark-charcoal);
-      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
-      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
-      line-height:1.6;
-    }
-
-    .container{max-width:var(--max-width);margin:0 auto;padding:24px;}
-
-    header{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding:12px 0;
-    }
-
-    .brand{display:flex;align-items:center;gap:14px;}
-    .logo{
-      width:54px;height:54px;border-radius:8px;
-      background:linear-gradient(135deg,var(--primary-gold),#FFD966);
-      display:flex;align-items:center;justify-content:center;color:var(--deep-burgundy);
-      font-weight:700;font-family:Playfair Display,serif;
-    }
-    h1.logo-title{font-family:Playfair Display,serif;font-weight:700;color:var(--primary-gold);margin:0;font-size:18px;}
-
-    nav a.btn{
-      background:var(--primary-gold);
-      color:var(--deep-burgundy);
-      border:none;
-      padding:14px 22px;
-      border-radius:12px;
-      font-weight:700;
-      cursor:pointer;
-      text-decoration:none;
-      box-shadow:0 6px 20px rgba(255,184,0,0.5);
-      transition:transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    nav a.btn:hover{
-      transform:translateY(-4px);
-      box-shadow:0 12px 25px rgba(255,184,0,0.6);
-    }
-
-    /* Hero */
-    .hero{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start;margin-top:24px;}
-    .hero-card{background:var(--card);
-      border-radius:16px;padding:24px;border:1px solid rgba(255,184,0,0.15);box-shadow:0 10px 30px rgba(0,0,0,0.1);}
-    .eyebrow{color:var(--muted);letter-spacing:1px;text-transform:uppercase;font-size:12px;}
-    h2{font-family:Playfair Display,serif;font-size:32px;margin:10px 0 12px;color:var(--primary-gold);}
-    p.lead{color:var(--dark-charcoal);font-size:16px;margin-bottom:20px;}
-
-    /* CTA Buttons */
-    .cta-row{display:flex;gap:12px;flex-wrap:wrap;}
-    .btn{
-      background:var(--primary-gold);
-      color:var(--deep-burgundy);
-      border:none;
-      padding:12px 20px;
-      border-radius:12px;
-      font-weight:700;
-      cursor:pointer;
-      text-decoration:none;
-      box-shadow:0 6px 20px rgba(255,184,0,0.5);
-      transition:transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .btn:hover{transform:translateY(-4px);box-shadow:0 12px 25px rgba(255,184,0,0.6);}
-    .btn.ghost{background:transparent;border:1px solid rgba(125,125,125,0.3);color:var(--dark-charcoal);box-shadow:none;}
-
-    .price-badge{background:rgba(255,184,0,0.05);padding:14px;border-radius:12px;border:1px solid rgba(255,184,0,0.15);text-align:center;margin-top:12px;}
-    .price{font-family:Playfair Display,serif;font-size:26px;color:var(--primary-gold);margin:6px 0;}
-    .small{font-size:13px;color:var(--muted);}
-
-    .features{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin:16px 0;}
-    .feature{background:var(--card);padding:18px;border-radius:12px;border:1px solid rgba(255,184,0,0.1);}
-    .feature h4{margin:0 0 6px;font-family:Playfair Display,serif;color:var(--primary-gold);}
-    .feature p{margin:0;color:var(--dark-charcoal);font-size:14px;}
-
-    section{margin:28px 0;padding:24px;border-radius:12px;}
-    .glass{background:linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.3));border:1px solid rgba(255,184,0,0.15);backdrop-filter: blur(6px);}
-
-    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
-    ul.bullets{padding-left:18px}
-    li{margin-bottom:10px}
-
-    .highlight{color:var(--accent-coral);font-weight:700;}
-    .muted{color:var(--muted);}
-    .stat{font-family:Playfair Display,serif;font-size:28px;color:var(--primary-gold);}
-    .reg-links{display:flex;gap:10px;flex-wrap:wrap;}
-    .reg-links a{background:transparent;border:1px solid rgba(125,125,125,0.2);padding:10px 12px;border-radius:10px;color:var(--dark-charcoal);text-decoration:none;}
-
-    .whatsapp-icon{width:42px;height:42px;border-radius:50%;transition:transform 0.3s ease;}
-    .whatsapp-icon:hover{transform:scale(1.1);}
-
-    .voucher{background:linear-gradient(90deg, rgba(255,184,0,0.08), rgba(255,184,0,0.03));padding:16px;border-radius:12px;border:1px dashed rgba(255,184,0,0.25);color:var(--primary-gold);margin-top:12px;}
-
-    .fade-in{animation:fade 900ms ease both;}
-    @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-
-    /* Responsive */
-    @media (max-width:1000px){.hero{grid-template-columns:1fr} .features{grid-template-columns:1fr} .grid-2{grid-template-columns:1fr}}
-    @media (max-width:600px){.features{grid-template-columns:1fr} .logo{display:none} header{padding:10px}}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contriby Academy — Elite Entrepreneurial Training</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+--primary-gold:#FFB800;       
+--deep-blue:#2F80ED;      
+--cream:#FFFFFF;               
+--dark-charcoal:#1F1F1F;      
+--accent-coral:#FF6F61;       
+--muted:#7D7D7D;              
+--card:#FDF6EC;               
+--max-width:1100px;
+}
+*{box-sizing:border-box;}
+body{
+margin:0;
+background:linear-gradient(180deg,#FFFFFF 0%, #FDF6EC 80%);
+color:var(--dark-charcoal);
+font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+line-height:1.6;
+}
+.container{max-width:var(--max-width);margin:0 auto;padding:24px;}
+header{display:flex;align-items:center;justify-content:space-between;padding:12px 0;}
+.brand{display:flex;align-items:center;gap:14px;}
+.logo{width:54px;height:54px;border-radius:8px;background:linear-gradient(135deg,var(--primary-gold),#FFD966);display:flex;align-items:center;justify-content:center;color:var(--deep-blue);font-weight:700;font-family:Playfair Display,serif;}
+h1.logo-title{font-family:Playfair Display,serif;font-weight:700;color:var(--primary-gold);margin:0;font-size:18px;}
+nav a.btn{background:var(--primary-gold);color:var(--deep-blue);border:none;padding:14px 22px;border-radius:12px;font-weight:700;cursor:pointer;text-decoration:none;box-shadow:0 6px 20px rgba(255,184,0,0.5);transition:transform 0.3s ease, box-shadow 0.3s ease;}
+nav a.btn:hover{transform:translateY(-4px);box-shadow:0 12px 25px rgba(255,184,0,0.6);}
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start;margin-top:24px;}
+.hero-card{background:var(--card);border-radius:16px;padding:24px;border:1px solid rgba(255,184,0,0.15);box-shadow:0 10px 30px rgba(0,0,0,0.1);}
+.eyebrow{color:var(--muted);letter-spacing:1px;text-transform:uppercase;font-size:12px;}
+h2{font-family:Playfair Display,serif;font-size:32px;margin:10px 0 12px;color:var(--primary-gold);}
+p.lead{color:var(--dark-charcoal);font-size:16px;margin-bottom:20px;}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;}
+.btn{background:var(--primary-gold);color:var(--deep-blue);border:none;padding:12px 20px;border-radius:12px;font-weight:700;cursor:pointer;text-decoration:none;box-shadow:0 6px 20px rgba(255,184,0,0.5);transition:transform 0.3s ease, box-shadow 0.3s ease;}
+.btn:hover{transform:translateY(-4px);box-shadow:0 12px 25px rgba(255,184,0,0.6);}
+.btn.ghost{background:transparent;border:1px solid rgba(125,125,125,0.3);color:var(--dark-charcoal);box-shadow:none;}
+.price-badge{background:rgba(255,184,0,0.05);padding:14px;border-radius:12px;border:1px solid rgba(255,184,0,0.15);text-align:center;margin-top:12px;}
+.price{font-family:Playfair Display,serif;font-size:26px;color:var(--primary-gold);margin:6px 0;}
+.small{font-size:13px;color:var(--muted);}
+.features{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin:16px 0;}
+.feature{background:var(--card);padding:18px;border-radius:12px;border:1px solid rgba(255,184,0,0.1);}
+.feature h4{margin:0 0 6px;font-family:Playfair Display,serif;color:var(--primary-gold);}
+.feature p{margin:0;color:var(--dark-charcoal);font-size:14px;}
+section{margin:28px 0;padding:24px;border-radius:12px;}
+.glass{background:linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.3));border:1px solid rgba(255,184,0,0.15);backdrop-filter: blur(6px);}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+ul.bullets{padding-left:18px}
+li{margin-bottom:10px}
+.highlight{color:var(--accent-coral);font-weight:700;}
+.muted{color:var(--muted);}
+.stat{font-family:Playfair Display,serif;font-size:28px;color:var(--primary-gold);}
+.reg-links{display:flex;gap:10px;flex-wrap:wrap;}
+.reg-links a{background:transparent;border:1px solid rgba(125,125,125,0.2);padding:10px 12px;border-radius:10px;color:var(--dark-charcoal);text-decoration:none;}
+.whatsapp-icon{width:42px;height:42px;border-radius:50%;transition:transform 0.3s ease;}
+.whatsapp-icon:hover{transform:scale(1.1);}
+.voucher{background:linear-gradient(90deg, rgba(255,184,0,0.08), rgba(255,184,0,0.03));padding:16px;border-radius:12px;border:1px dashed rgba(255,184,0,0.25);color:var(--primary-gold);margin-top:12px;}
+.fade-in{animation:fade 900ms ease both;}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@media (max-width:1000px){.hero{grid-template-columns:1fr} .features{grid-template-columns:1fr} .grid-2{grid-template-columns:1fr}}
+@media (max-width:600px){.features{grid-template-columns:1fr} .logo{display:none} header{padding:10px}}
+</style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="brand">
-        <div class="logo">CA</div>
-        <div>
-          <div style="font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:1px">Contriby Academy</div>
-          <div class="logo-title">Elite Entrepreneurial Training</div>
-        </div>
-      </div>
-      <nav>
-        <a class="btn" href="https://app.dripline.io/i/Xen31">Join Now</a>
-      </nav>
-    </header>
+<div class="container">
+<header>
+<div class="brand">
+<div class="logo">CA</div>
+<div>
+<div style="font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:1px">Contriby Academy</div>
+<div class="logo-title">Elite Entrepreneurial Training</div>
+</div>
+</div>
+<nav>
+<a class="btn" href="https://app.dripline.io/i/Xen31">Join Now</a>
+</nav>
+</header>
 
-    <!-- HERO -->
-    <div class="hero">
-      <div class="hero-card glass fade-in">
-        <div class="eyebrow">Complete Entrepreneurial System</div>
-        <h2>Master Entrepreneurship in Every Dimension</h2>
-        <p class="lead">Where Ambition Meets Action. Learn 5 integrated dimensions—Personal Mastery, Business Architect, Financial Freedom, Network Mastery, Digital Assets.</p>
+<!-- HERO -->
+<div class="hero">
+<div class="hero-card glass fade-in">
+<div class="eyebrow">Complete Entrepreneurial System</div>
+<h2>Master Entrepreneurship in Every Dimension</h2>
+<p class="lead">Where Ambition Meets Action. Learn 5 integrated dimensions—Personal Mastery, Business Architect, Financial Freedom, Network Mastery, Digital Assets.</p>
 
-        <div class="cta-row">
-          <a class="btn" href="https://app.dripline.io/i/Xen31">Join us today</a>
-          <a class="btn" href="https://app.dripline.io/i/Xian">Register Here</a>
-          <a class="btn" href="https://app.dripline.io/i/BossladyTT">Become a Student</a>
-          <a class="btn ghost" href="#why">Learn More</a>
-        </div>
+<div class="cta-row">
+<a class="btn" href="https://app.dripline.io/i/Xen31">Join us today</a>
+<a class="btn" href="https://app.dripline.io/i/Xian">Register Here</a>
+<a class="btn" href="https://app.dripline.io/i/BossladyTT">Become a Student</a>
+<a class="btn ghost" href="#why">Learn More</a>
+</div>
 
-        <div style="display:flex;gap:14px;margin-top:18px;flex-wrap:wrap;align-items:flex-start">
-          <div class="price-badge">
-            <div class="small">One-year access</div>
-            <div class="price">€99 <span class="muted"> / TTD 785</span></div>
-            <div class="small">TTD 65.41 / month — $2.20 / day</div>
-          </div>
+<div style="display:flex;gap:14px;margin-top:18px;flex-wrap:wrap;align-items:flex-start">
+<div class="price-badge">
+<div class="small">One-year access</div>
+<div class="price">€99 <span class="muted"> / TTD 785</span></div>
+<div class="small">TTD 65.41 / month — $2.20 / day</div>
+</div>
 
-          <div style="flex:1">
-            <div class="voucher">
-              <strong>Special Reward:</strong>
-              <div style="font-size:14px;color:var(--dark-charcoal);margin-top:6px">Refer 2 friends within 48 HOURS and get your €99 back as a voucher — sell it, gift it, or use it yourself!</div>
-            </div>
-          </div>
-        </div>
-      </div>
+<div style="flex:1">
+<div class="voucher">
+<strong>Special Reward:</strong>
+<div style="font-size:14px;color:var(--dark-charcoal);margin-top:6px">Refer 2 friends within 48 HOURS and get your €99 back as a voucher — sell it, gift it, or use it yourself!</div>
+</div>
+</div>
+</div>
+</div>
 
-      <aside class="hero-card fade-in">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
-          <div>
-            <div class="muted">Transformational Curriculum</div>
-            <div class="stat">5 Dimensions</div>
-          </div>
-          <div style="text-align:right">
-            <div class="muted">Media</div>
-            <div class="muted">11 eBooks • 7 Podcasts</div>
-          </div>
-        </div>
+<aside class="hero-card fade-in">
+<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px">
+<div>
+<div class="muted">Transformational Curriculum</div>
+<div class="stat">5 Dimensions</div>
+</div>
+<div style="text-align:right">
+<div class="muted">Media</div>
+<div class="muted">11 eBooks • 7 Podcasts</div>
+</div>
+</div>
 
-        <div style="margin-top:12px">
-          <strong>Contact</strong>
-          <div style="margin-top:10px">
-            <a href="https://wa.me/18683719412?text=Hey%20I%20want%20to%20join%20your%20e-learning%20platform" target="_blank">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon">
-            </a>
-          </div>
-        </div>
+<div style="margin-top:12px">
+<strong>Contact</strong>
+<div style="margin-top:10px">
+<a href="https://wa.me/18683719412?text=Hey%20I%20want%20to%20join%20your%20e-learning%20platform" target="_blank">
+<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon">
+</a>
+</div>
+</div>
 
-        <div style="margin-top:18px">
-          <strong>Quick Registration</strong>
-          <div class="reg-links" style="margin-top:10px">
-            <a href="https://app.dripline.io/i/Xen31">Register Now</a>
-            <a href="https://app.dripline.io/i/Xian">Register Now</a>
-            <a href="https://app.dripline.io/i/BossladyTT">Register Now</a>
-          </div>
-        </div>
-      </aside>
-    </div>
+<div style="margin-top:18px">
+<strong>Quick Registration</strong>
+<div class="reg-links" style="margin-top:10px">
+<a href="https://app.dripline.io/i/Xen31">Register Now</a>
+<a href="https://app.dripline.io/i/Xian">Register Now</a>
+<a href="https://app.dripline.io/i/BossladyTT">Register Now</a>
+</div>
+</div>
+</aside>
+</div>
 
-    <!-- WHY -->
-    <section id="why" class="glass fade-in">
-      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px">
-        <div style="flex:1;min-width:280px">
-          <h3 style="font-family:Playfair Display,serif;margin-top:0">Why Most Entrepreneurs Struggle</h3>
-          <p class="muted">Traditional paths teach narrow skills. Today’s economy demands integrated mastery—leadership, business strategy, financial IQ, team building, digital fluency. Contriby Academy combines them into one program.</p>
+<!-- WHY -->
+<section id="why" class="glass fade-in">
+<div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px">
+<div style="flex:1;min-width:280px">
+<h3 style="font-family:Playfair Display,serif;margin-top:0">Why Most Entrepreneurs Struggle</h3>
+<p class="muted">Traditional paths teach narrow skills. Today’s economy demands integrated mastery—leadership, business strategy, financial IQ, team building, digital fluency. Contriby Academy combines them into one program.</p>
 
-          <ul class="bullets muted">
-            <li>Master a single skill but miss the system.</li>
-            <li>Lack modern digital asset & passive income knowledge.</li>
-            <li>Fail to build duplicable teams & automated systems.</li>
-          </ul>
-        </div>
-        <div style="flex:1;min-width:280px;background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));padding:18px;border-radius:12px;border:1px solid rgba(255,184,0,0.15)">
-          <h4 style="margin-top:0;color:var(--primary-gold)">Five Dimensions</h4>
-          <div class="features" style="grid-template-columns:1fr">
-            <div class="feature"><h4>Personal Mastery</h4><p class="muted">Self-leadership, resilience, communication.</p></div>
-            <div class="feature"><h4>Business Architect</h4><p class="muted">MVPs, funnels, scaling & automation.</p></div>
-            <div class="feature"><h4>Financial Freedom</h4><p class="muted">Cashflow, pricing, investing & taxes.</p></div>
-            <div class="feature"><h4>Network Mastery</h4><p class="muted">Recruiting, leadership & team systems.</p></div>
-            <div class="feature"><h4>Digital Assets</h4><p class="muted">Crypto, DeFi, NFTs & blockchain strategy.</p></div>
-          </div>
-        </div>
-      </div>
-    </section>
+<ul class="bullets muted">
+<li>Master a single skill but miss the system.</li>
+<li>Lack modern digital asset & passive income knowledge.</li>
+<li>Fail to build duplicable teams & automated systems.</li>
+</ul>
+</div>
+<div style="flex:1;min-width:280px;background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));padding:18px;border-radius:12px;border:1px solid rgba(255,184,0,0.15)">
+<h4 style="margin-top:0;color:var(--primary-gold)">Five Dimensions</h4>
+<div class="features" style="grid-template-columns:1fr">
+<div class="feature"><h4>Personal Mastery</h4><p class="muted">Self-leadership, resilience, communication.</p></div>
+<div class="feature"><h4>Business Architect</h4><p class="muted">MVPs, funnels, scaling & automation.</p></div>
+<div class="feature"><h4>Financial Freedom</h4><p class="muted">Cashflow, pricing, investing & taxes.</p></div>
+<div class="feature"><h4>Network Mastery</h4><p class="muted">Recruiting, leadership & team systems.</p></div>
+<div class="feature"><h4>Digital Assets</h4><p class="muted">Crypto, DeFi, NFTs & blockchain strategy.</p></div>
+</div>
+</div>
+</div>
+</section>
 
-    <!-- WHAT'S INSIDE -->
-    <section class="glass fade-in">
-      <h3 style="margin-top:0;font-family:Playfair Display,serif">What You Get</h3>
-      <div class="grid-2">
-        <div>
-          <ul class="bullets muted">
-            <li>Full Contriby Academy Curriculum across 5 dimensions</li>
-            <li>11 Premium eBooks — practical frameworks & templates</li>
-            <li>7 Exclusive Podcasts with proven leaders</li>
-            <li>Club Membership with earning & referral structure (15 levels deep)</li>
-            <li>Frequent content updates & community events</li>
-          </ul>
-        </div>
-        <div>
-          <div style="background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));padding:18px;border-radius:12px;border:1px solid rgba(255,184,0,0.05);">
-            <div style="display:flex;justify-content:space-between;align-items:center">
-              <div>
-                <div class="small muted">Price</div>
-                <div class="stat">€99</div>
-                <div class="muted">(TTD 785 / year)</div>
-              </div>
-              <div style="text-align:right">
-                <div class="muted">Monthly Equivalent</div>
-                <div class="highlight">TTD 65.41</div>
-                <div class="muted">~ $2.20 / day</div>
-              </div>
-            </div>
+<!-- WHAT'S INSIDE -->
+<section class="glass fade-in">
+<h3 style="margin-top:0;font-family:Playfair Display,serif">What You Get</h3>
+<div class="grid-2">
+<div>
+<ul class="bullets muted">
+<li>Access to full Contriby Academy curriculum across 5 dimensions</li>
+<li>Rich library of eBooks, podcasts, newsletters & webinars</li>
+<li>Club Membership with referral & earnings system (15 levels deep)</li>
+<li>Continuous content updates & community events</li>
+<li>Skills to launch your own online shop using PLR & digital products</li>
+</ul>
+</div>
+<div>
+<div style="background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));padding:18px;border-radius:12px;border:1px solid rgba(255,184,0,0.05);">
+<div style="display:flex;justify-content:space-between;align-items:center">
+<div>
+<div class="small muted">Price</div>
+<div class="stat">€99</div>
+<div class="muted">(TTD 785 / year)</div>
+</div>
+<div style="text-align:right">
+<div class="muted">Monthly Equivalent</div>
+<div class="highlight">TTD 65.41</div>
+<div class="muted">~ $2.20 / day</div>
+</div>
+</div>
 
-            <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">
-              <a class="btn" href="https://app.dripline.io/i/Xen31">Join our Edu-Family</a>
-              <a class="btn" href="https://app.dripline.io/i/Xian">Register with Us</a>
-              <a class="btn" href="https://app.dripline.io/i/BossladyTT">Learn and Earn</a>
-            </div>
+<div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">
+<a class="btn" href="https://app.dripline.io/i/Xen31">Join our Edu-Family</a>
+<a class="btn" href="https://app.dripline.io/i/Xian">Register with Us</a>
+<a class="btn" href="https://app.dripline.io/i/BossladyTT">Learn and Earn</a>
+</div>
 
-            <div style="margin-top:12px" class="muted">Tip: Sign 2 friends within 48 hours & get €99 refunded as a voucher!</div>
+<div style="margin-top:12px" class="muted">Tip: Sign 2 friends within 48 hours & get €99 refunded as a voucher!</div>
+</div>
+</div>
+</div>
+</section>
 
-          </div>
-        </div>
-      </div>
-    </section>
+<!-- REFERRAL BUNDLES -->
+<section class="glass fade-in">
+<h3 style="font-family:Playfair Display,serif;margin-top:0">Referral Bonus Bundles</h3>
+<div class="grid-2">
+<div class="feature">
+<h4>2 Bundles in 48 Hours</h4>
+<p class="muted">Refer your first 2 friends within 48 hours and receive 1 Upgrade Bundle valued at €99!</p>
+</div>
+<div class="feature">
+<h4>5 Bundles in 7 Days</h4>
+<p class="muted">Refer 5 friends within 7 days to unlock 1 Upgrade Bundle valued at €99!</p>
+</div>
+<div class="feature">
+<h4>10 Bundles in 14 Days</h4>
+<p class="muted">Refer 10 friends within 14 days and earn 2 Upgrade Bundles valued at €99 each!</p>
+</div>
+</div>
+</section>
 
-    <!-- EARN WHILE LEARN -->
-    <section class="glass fade-in">
-      <h3 style="font-family:Playfair Display,serif;margin-top:0">Earn While You Learn</h3>
-      <div class="grid-2">
-        <div>
-          <p class="muted">Become a Club Member and earn whenever someone you introduced purchases Contriby Academy. Earnings extend up to 15 levels deep. Education with a built-in income engine!</p>
-          <ul class="bullets muted">
-            <li>Introduce a customer → You get paid</li>
-            <li>Your club friends introduce customers → You still earn</li>
-            <li>Earnings flow up to 15 levels deep</li>
-          </ul>
-        </div>
-        <div>
-          <div style="padding:12px;border-radius:10px;border:1px solid rgba(255,184,0,0.1);background:linear-gradient(90deg, rgba(255,184,0,0.05), transparent);">
-            <strong>Referral Reward</strong>
-            <p class="muted">Sign 2 friends within 48 hours of registering and get €99 refunded as a voucher. Sell it, gift it, or use it yourself.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+<!-- AI MENTOR -->
+<section class="glass fade-in">
+<h3 style="font-family:Playfair Display,serif;margin-top:0">Your AI Mentor</h3>
+<ul class="bullets muted">
+<li>Get instant answers to your questions</li>
+<li>Receive guidance to introduce Dripline to friends</li>
+<li>Build a personalized Dripline plan for success</li>
+<li>Access news, promotions & exclusive tips anytime</li>
+<li>Your AI Mentor never sleeps—always here to help!</li>
+</ul>
+</section>
 
-    <!-- CTA -->
-    <section class="fade-in" style="text-align:center">
-      <h3 style="font-family:Playfair Display,serif;margin-bottom:14px">Start Your Journey Today</h3>
-      <div class="cta-row" style="justify-content:center;">
-        <a class="btn" href="https://app.dripline.io/i/Xen31">Join Now</a>
-        <a class="btn" href="https://app.dripline.io/i/Xian">Register</a>
-        <a class="btn" href="https://app.dripline.io/i/BossladyTT">Become a Student</a>
-      </div>
-    </section>
- <footer>
-      <div>&copy; Contriby Academy — All rights reserved</div>
-      <div style="display:flex;gap:12px;align-items:center">
-        <a class="muted" href="#">Terms</a>
-        <a class="muted" href="#">Privacy</a>
-      </div>
-    </footer>
-  </div>
-  </div>
+<!-- EXPANDED VALUE -->
+<section class="glass fade-in">
+<h3 style="font-family:Playfair Display,serif;margin-top:0">More Than Education</h3>
+<p class="muted">Our club expands into Lifestyle, Entertainment, Education, Travel, Communication, Finance, Gaming & Health. All-inclusive for one-time yearly subscription of €99 / TTD 785!</p>
+<p class="highlight">BONUS: Enroll today to access a vault of resources for Social Media, content creation templates, Canva crash course, Digital Product Mastery & PLR material to start your own online shop. Combine academy knowledge + self-education + PLR tools to grow your business!</p>
+<p class="muted">After enrolling, send a WhatsApp to receive your exclusive digital products to level up your online game immediately.</p>
+</section>
+
+<!-- CTA -->
+<section class="fade-in" style="text-align:center">
+<h3 style="font-family:Playfair Display,serif;margin-bottom:14px">Start Your Journey Today</h3>
+<div class="cta-row" style="justify-content:center;">
+<a class="btn" href="https://app.dripline.io/i/Xen31">Join Now</a>
+<a class="btn" href="https://app.dripline.io/i/Xian">Register</a>
+<a class="btn" href="https://app.dripline.io/i/BossladyTT">Become a Student</a>
+</div>
+</section>
+
+<footer>
+<div>&copy; Contriby Academy — All rights reserved</div>
+<div style="display:flex;gap:12px;align-items:center">
+<a class="muted" href="#">Terms</a>
+<a class="muted" href="#">Privacy</a>
+</div>
+</footer>
+</div>
 </body>
 </html>
+
+
 
 
